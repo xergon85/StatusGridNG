@@ -1,0 +1,8 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell-grid-element {
+  width: 25%;
+}
