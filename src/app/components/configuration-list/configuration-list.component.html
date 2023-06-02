@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let configuration of configurations">
+    <td>{{configuration.name}}</td>
+    <td>
+      <button (click)="activateConfiguration(configuration.name)">Activate</button>
+      <button (click)="deleteConfiguration(configuration.name)">Delete</button>
+    </td>
+  </tr>
+</table>
