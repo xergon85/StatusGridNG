@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { StatusCode } from 'src/app/core/status-code';
 import { GridStatus } from 'src/app/models/grid-status';
-import { StatusCode } from 'src/app/models/status-code';
 
 @Component({
   selector: 'grid-cell',
