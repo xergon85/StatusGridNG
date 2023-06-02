@@ -1,0 +1,30 @@
+.grid-cell-untouched {
+    background-color: #aaa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid-cell-untouched:hover {
+    background-color: #eee;
+}
+
+.grid-cell-ok {
+    background-color: #cfc;
+    border: 1px solid #0c0;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+.grid-cell-error {
+    background-color: #fcc;
+    border: 1px solid #c00;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
