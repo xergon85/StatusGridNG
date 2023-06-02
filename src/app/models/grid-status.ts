@@ -1,4 +1,4 @@
-import { StatusCode } from './status-code';
+import { StatusCode } from '../core/status-code';
 
 export class GridStatus {
   id?: number;
