@@ -36,8 +36,11 @@ export class EditGridComponent implements OnInit, OnDestroy {
     this.subscription = this.service.$activeConfiguration.subscribe(
       (config) => {
         if (!config) {
+          console.log('EditGridComponent.ngOnInit(), no active configuration');
           return;
         }
+        console.log('Loading grid: ', config);
+
         this.loadGrid(config);
       }
     );
@@ -56,12 +59,10 @@ export class EditGridComponent implements OnInit, OnDestroy {
     );
 
     this.service.createGridConfiguration(gridConfiguration);
-
-    // save grid to database
-    console.log(gridConfiguration);
   }
 
   loadGrid(config: GridConfiguration) {
+    console.log('EditGridComponent.loadGrid(), config: ', config);
     config.statuses.forEach((status) => {
       this.grid[status.y][status.x] = status;
     });
