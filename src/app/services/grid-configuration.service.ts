@@ -22,7 +22,6 @@ export class GridConfigurationService {
   constructor(private http: HttpClient) {}
 
   public getGridConfigurations(): Observable<ServiceResponse> {
-    console.log('GridConfigurationService.getGridConfigurations()');
     return this.http
       .get<ServiceResponse>(`${environment.apiUrl}/${this.url}`)
       .pipe(
@@ -33,7 +32,6 @@ export class GridConfigurationService {
   }
 
   public deleteGridConfiguration(name: string) {
-    console.log('GridConfigurationService.deleteGridConfiguration()');
     return this.http
       .delete<ServiceResponse>(`${environment.apiUrl}/${this.url}/${name}`)
       .pipe(
@@ -44,7 +42,6 @@ export class GridConfigurationService {
   }
 
   public createGridConfiguration(grid: GridConfiguration) {
-    console.log('GridConfigurationService.createGridConfiguration()');
     return this.http
       .post<ServiceResponse>(`${environment.apiUrl}/${this.url}`, grid)
       .subscribe((response) => {
@@ -53,7 +50,6 @@ export class GridConfigurationService {
   }
 
   public setActiveConfiguration(name: string) {
-    console.log('GridConfigurationService.setActiveConfiguration()');
     let configuration = this.configurationsSubject.value.find(
       (conf) => conf.name === name
     );
@@ -61,8 +57,6 @@ export class GridConfigurationService {
       console.error(`Configuration with name ${name} not found.`);
       return;
     }
-
-    console.log('configuration: ', configuration);
 
     return this.http
       .get<ServiceResponse>(`${environment.apiUrl}/${this.url}/${name}`)
