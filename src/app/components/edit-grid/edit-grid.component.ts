@@ -16,21 +16,9 @@ export class EditGridComponent implements OnInit, OnDestroy {
   name: string = '';
   private subscription: Subscription = new Subscription();
 
-  // create two dimentional grid 6x6 to store grid-statuses
-
   constructor(private service: GridConfigurationService) {
-    const width = 6;
-    const height = 6;
-
-    // initialize grid
-    for (let i = 0; i < width; i++) {
-      this.grid[i] = [];
-      for (let j = 0; j < height; j++) {
-        this.grid[i][j] = new GridStatus();
-        this.grid[i][j].x = j;
-        this.grid[i][j].y = i;
-      }
-    }
+    this.initializeGrid();
+    this.name = '';
   }
 
   ngOnInit(): void {
@@ -40,7 +28,6 @@ export class EditGridComponent implements OnInit, OnDestroy {
           console.log('EditGridComponent.ngOnInit(), no active configuration');
           return;
         }
-        console.log('Loading grid: ', config);
 
         this.loadGrid(config);
       }
@@ -57,6 +44,24 @@ export class EditGridComponent implements OnInit, OnDestroy {
     var gridConfiguration = new GridConfiguration(this.name, this.grid.flat());
 
     this.service.createGridConfiguration(gridConfiguration);
+
+    this.initializeGrid();
+    this.name = '';
+  }
+
+  initializeGrid() {
+    const width = 6;
+    const height = 6;
+
+    // initialize grid
+    for (let i = 0; i < width; i++) {
+      this.grid[i] = [];
+      for (let j = 0; j < height; j++) {
+        this.grid[i][j] = new GridStatus();
+        this.grid[i][j].x = j;
+        this.grid[i][j].y = i;
+      }
+    }
   }
 
   loadGrid(config: GridConfiguration) {
