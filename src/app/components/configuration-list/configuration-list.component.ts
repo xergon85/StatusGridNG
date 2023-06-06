@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GridConfiguration } from 'src/app/models/grid-configuration';
-import { ServiceResponse } from 'src/app/core/service-response';
 import { GridConfigurationService } from 'src/app/services/grid-configuration.service';
 import { Subscription } from 'rxjs';
 

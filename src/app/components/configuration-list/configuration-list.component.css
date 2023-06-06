@@ -1,0 +1,24 @@
+.configuration-container {
+  width: 720px;
+  margin-top: 5px;
+  padding: 8px;
+}
+
+.element-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 694px;
+  height: 40px;
+  margin: auto;
+  border-bottom: 1px solid #000;
+}
+
+.element-actions > button {
+  margin: 0px 5px 0px 0px;
+}
+
+.element-name {
+  margin: 5px 10px;
+}

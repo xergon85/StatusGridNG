@@ -1,13 +1,15 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let configuration of configurations">
-    <td>{{configuration.name}}</td>
-    <td>
-      <button (click)="activateConfiguration(configuration.name)">Activate</button>
-      <button (click)="deleteConfiguration(configuration.name)">Delete</button>
-    </td>
-  </tr>
-</table>
+<div class="configuration-container">
+  <div class="element-container" *ngFor="let configuration of configurations">
+    <p class="element-name">{{configuration.name}}</p>
+    <div class="element-actions">
+      <button class="btn btn-primary btn-sm" (click)="activateConfiguration(configuration.name)">
+        <i class="bi bi-arrow-up" style="margin-right:5px;"></i>
+        <span>Activate</span>
+      </button>
+      <button class="btn btn-outline-danger btn-sm" (click)="deleteConfiguration(configuration.name)">
+        <i class="bi bi-x-circle" style="margin-right:5px;"></i>
+        <span>Delete</span>
+      </button>
+    </div>
+  </div>
+</div>
