@@ -64,6 +64,12 @@ export class EditGridComponent implements OnInit, OnDestroy {
     }
   }
 
+  resetForm(form: NgForm) {
+    form.resetForm();
+    this.initializeGrid();
+    this.name = '';
+  }
+
   loadGrid(config: GridConfiguration) {
     console.log('EditGridComponent.loadGrid(), config: ', config);
     config.statuses.forEach((status) => {
