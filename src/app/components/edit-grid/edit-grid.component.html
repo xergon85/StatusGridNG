@@ -1,14 +1,19 @@
 
-<div class="grid">
+<div class="edit-grid">
   <grid-cell *ngFor="let elem of getGridElements();"
-    class="grid-element"
+    class="edit-grid-element"
     [gridStatus]="elem">
   </grid-cell>
 </div>
 
-  <div class="grid-edit">
-    <form class="grid-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
-      <input class="input-text" type="text" [(ngModel)]="name" name="name" placeholder="Grid name" required>
-      <input class="submit-button" type="submit" value="Save" />
-    </form>
-  </div>
+<hr />
+
+<div class="grid-edit">
+  <form class="grid-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <input class="input-text form-control" type="text" [(ngModel)]="name" name="name" placeholder="Enter configuration name..." aria-label="Configuration Name" required>
+    <div class="actions">
+      <input class="btn btn-primary btn-sm" type="submit" value="Save" />
+      <input class="btn btn-warning btn-sm" type="button" value="Reset" (click)="resetForm(form)" />
+    </div>
+  </form>
+</div>

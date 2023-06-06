@@ -1,14 +1,14 @@
-.grid {
+.edit-grid {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 720px;
   border: 1px solid #ccc;
   padding: 8px;
-  margin: 5px;
 }
 
-.grid-element {
-  flex: 0 0 calc(100% / 6);
+.edit-grid-element {
+  flex: 0 0 calc(700px / 6);
   height: 40px;
   box-sizing: border-box;
 }
@@ -16,21 +16,29 @@
 .grid-edit {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  border: 1px solid #ccc;
+  width: 720px;
   padding: 8px;
-  margin: 5px;
+  margin-top: 5px;
 }
 
 .grid-form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 90%;
+  width: 720px;
   margin: auto;
 }
 
 .input-text {
-  width: 550px;
+  width: 500px;
   margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions > .btn {
+  margin: 0px 5px 0px 0px;
 }
