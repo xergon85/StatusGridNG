@@ -1,8 +1,11 @@
 .grid-cell-untouched {
+    display: block;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
     background-color: #aaa;
-    border: 1px solid #ccc;
+    border: 1px solid #180101;
     border-radius: 4px;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
     cursor: pointer;
 }
@@ -12,19 +15,25 @@
 }
 
 .grid-cell-ok {
+    display: block;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
     background-color: #cfc;
-    border: 1px solid #0c0;
+    border: 1px solid #180101;
     border-radius: 4px;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
     cursor: pointer;
   }
 
 .grid-cell-error {
+    display: block;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
     background-color: #fcc;
-    border: 1px solid #c00;
+    border: 1px solid #180101;
     border-radius: 4px;
-    padding: 5px;
+    padding: 8px;
     text-align: center;
     cursor: pointer;
   }
