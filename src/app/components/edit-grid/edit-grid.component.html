@@ -1,15 +1,14 @@
+
 <div class="grid">
-  <div class="row" *ngFor="let row of grid; let i=index">
-    <div class="column" *ngFor="let col of row;let j=index">
-      <grid-cell
-          class="cell-grid-element"
-          [gridStatus]="grid[i][j]"
-        ></grid-cell>
-    </div>
+  <grid-cell *ngFor="let elem of getGridElements();"
+    class="grid-element"
+    [gridStatus]="elem">
+  </grid-cell>
 </div>
 
-
-<form (ngSubmit)="onSubmit(form)" #form="ngForm">
-  <input type="text" ngModel name="name" placeholder="Grid name" required>
-  <input type="submit" value="Save" />
-</form>
+  <div class="grid-edit">
+    <form class="grid-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <input class="input-text" type="text" [(ngModel)]="name" name="name" placeholder="Grid name" required>
+      <input class="submit-button" type="submit" value="Save" />
+    </form>
+  </div>

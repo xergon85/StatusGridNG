@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class EditGridComponent implements OnInit, OnDestroy {
   title = 'StatusGridNG';
   grid: GridStatus[][] = [];
+  name: string = '';
   private subscription: Subscription = new Subscription();
 
   // create two dimentional grid 6x6 to store grid-statuses
@@ -53,10 +54,7 @@ export class EditGridComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(form: NgForm) {
-    var gridConfiguration = new GridConfiguration(
-      form.value.name,
-      this.grid.flat()
-    );
+    var gridConfiguration = new GridConfiguration(this.name, this.grid.flat());
 
     this.service.createGridConfiguration(gridConfiguration);
   }
@@ -66,5 +64,10 @@ export class EditGridComponent implements OnInit, OnDestroy {
     config.statuses.forEach((status) => {
       this.grid[status.y][status.x] = status;
     });
+    this.name = config.name;
+  }
+
+  getGridElements(): GridStatus[] {
+    return this.grid.flat();
   }
 }
